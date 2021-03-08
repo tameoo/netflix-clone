@@ -1,0 +1,27 @@
+.movie-category{
+    &__title{
+        color: #fff;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    &__posters{
+        display: flex;
+        padding-left: 20px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 15px;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    &__img{
+        max-height: 250px;
+        object-fit: contain;
+        margin-right: 10px;
+        transition: transform .45s;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.08);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.options{
+    &__item{
+        margin-bottom: 10px;
+    }
+    &__item-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        background-color: #303030;
+        padding: 10px 20px;
+        margin-bottom: 2px;
+        cursor: pointer;
+        i{
+            color: #fff;
+            font-size: 30px;
+            font-weight: 300;
+        }
+    }
+    &__name{
+        font-size: 26px;
+        font-weight: 400;
+        color: #fff;
+    }
+    &__item-subheader{
+        background-color: #303030;
+        max-height: 1000px;
+        overflow: hidden;
+        transition: all .35s ease;
+        &_closed{
+            max-height: 0;
+        }
+    }
+    &__descr{
+        color: #fff;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 35px;
+        margin: 0;
+        padding: 20px;
+    }
+}
