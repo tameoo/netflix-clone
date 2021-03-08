@@ -1,7 +1,8 @@
 .questions{
     &__wrapper{
-        background-color: #000;
         padding: 50px;
+        background-color: #000;
+        border-bottom: 8px solid #222;
     }
     &__title{
         color: #fff;

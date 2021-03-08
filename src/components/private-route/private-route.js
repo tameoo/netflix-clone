@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const PrivateRoute = ({component: Component, user, ...rest}) => {
     return (
-        <Route {...rest} render={ props => user ? <Component {...props} /> : <Redirect to="/auth/sign-in" /> } />
+        <Route {...rest} render={ props => user ? <Component {...props} /> : <Redirect to="/sign-in" /> } />
     );
 }
 

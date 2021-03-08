@@ -19,7 +19,7 @@ const Header = ({ signIn = false, singOut = false, setUser }) => {
                             </svg>
                         </Link>
                     </div>
-                    { signIn ? (<Link to="/auth/sign-in"><button className="header__btn">Sign in</button></Link>) : null }
+                    { signIn ? (<Link to="/movies"><button className="header__btn">Sign in</button></Link>) : null }
                     { singOut ? (<Link to="/"><button className="header__btn" onClick={ () => setUser(null) }>Sign Out</button></Link>) : null }
                 </div>
             </div>

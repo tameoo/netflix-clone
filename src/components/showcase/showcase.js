@@ -16,15 +16,17 @@ const Showcase = () => {
                 ])
             });
         } 
-
+        
         fetchMovies();
     },[]);
     
     
     return (
         <section className="showcase">
-            <div className="showcase__inner" style={{backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`}}>
-                <Header singOut={true}/>
+            <div className="showcase__inner" style={{backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`}}>
+                <div className="showcase__header">
+                    <Header singOut={true}/>
+                </div>
                 <div className="showcase__wrapper">
                     <div className="showcase__text"> 
                         <h1 className="showcase__title">{ movie?.name || movie?.original_name}</h1>

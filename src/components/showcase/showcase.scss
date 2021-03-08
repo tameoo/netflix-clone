@@ -24,8 +24,8 @@
         justify-content: center;        
         padding: 0 56px;
     }
-    &__text{
-        width: 30vw;
+    &__header{
+        padding: 10px;
     }
     &__title{
         font-size: 40px;
@@ -36,7 +36,7 @@
     &__descr{
         font-size: 13px;
         font-weight: 600;
-        max-width: 350px;
+        max-width: 450px;
     }
     &__group-btn{
         width: 200px;

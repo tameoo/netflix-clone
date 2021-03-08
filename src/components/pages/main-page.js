@@ -3,7 +3,6 @@ import Header from '../header';
 import Story from '../story';
 import Card from '../card';
 import Questions from '../questions';
-import Footer from '../footer';
 import { StoryForm } from '../form';
 
 const MainPage = () => {
@@ -12,7 +11,6 @@ const MainPage = () => {
             <Story header={ <Header signIn={true} /> } form={ <StoryForm /> } />
             <Card />
             <Questions />
-            <Footer />
         </>
     );
 }
