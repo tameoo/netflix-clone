@@ -62,11 +62,19 @@ class SignInForm extends Component {
                     password: password.value
                 }
             ).then(data => {
-                this.props.setUser(data?.idToken);
-                this.setState({
-                    token: data ? data.idToken : null,
-                    loading: false
-                })
+                if(data?.error){
+                    this.setState({
+                        token: data ? data.idToken : null,
+                        loading: false
+                    })
+                } else {
+                    this.props.setUser(data?.idToken);
+                    this.setState({
+                        token: data ? data.idToken : null,
+                        loading: false
+                    })
+                    this.props.history.push("/movies");
+                }
             }
             );
         }
@@ -75,11 +83,7 @@ class SignInForm extends Component {
     render(){
 
         const { isEmailValid, isPasswordValid, isPasswordShown, token, loading } = this.state;
-
-        if(typeof token === "string"){
-            this.props.history.push("/movies");
-        } 
-
+        
         return(
             <form className="auth-form__form" onSubmit={ (e) => this.onSubmit(e) }>
                 <div className="auth-form__wrapper">
@@ -117,7 +121,7 @@ class SignInForm extends Component {
                     </div>
                     <div className="auth-form__control-wrapper">
                         <span>New to Netflix ?</span> 
-                        <Link to="/auth/sign-up">Sign up now</Link>
+                        <Link to="/sign-up">Sign up now</Link>
                     </div>
                 </div>
             </form>

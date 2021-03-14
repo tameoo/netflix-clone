@@ -10,7 +10,6 @@ class SignUpForm extends Component {
     state = {
         email: null,
         password: null,
-        name: null,
         isEmailValid: true, 
         isPasswordValid: true,
         isPasswordShown: false,
@@ -46,7 +45,7 @@ class SignUpForm extends Component {
         e.preventDefault();
 
         const { isEmailValid, isPasswordValid } = this.state;
-        const { email, name,  password } = e.target.elements;      
+        const { email, password } = e.target.elements;      
 
         this.checkEmail(email.value)
         this.checkPassword(password.value)
@@ -60,15 +59,22 @@ class SignUpForm extends Component {
             signUp( 
                 {
                     email: email.value,
-                    password: password.value, 
-                    name: name.value
+                    password: password.value
                 }
             ).then(data => {
-                this.props.setUser(data?.idToken);
-                this.setState({
-                    token: data ? data.idToken : null,
-                    loading: false
-                })
+                if(data?.error){
+                    this.setState({
+                        token: data ? data.idToken : null,
+                        loading: false
+                    })
+                } else {
+                    this.props.setUser(data?.idToken);
+                    this.setState({
+                        token: data ? data.idToken : null,
+                        loading: false
+                    })
+                    this.props.history.push("/movies");
+                }
             }
             );
         }
@@ -77,10 +83,6 @@ class SignUpForm extends Component {
 
     render(){
         const { isEmailValid, isPasswordValid, isPasswordShown, token, loading} = this.state;
-        
-        if(typeof token === "string"){
-            this.props.history.push("/movies");
-        }
         
         return(
             <form className="auth-form__form" onSubmit={ (e) => this.onSubmit(e) }>
@@ -127,7 +129,7 @@ class SignUpForm extends Component {
                     </div>
                     <div className="auth-form__control-wrapper">
                         <span>Already have an account ?</span> 
-                        <Link to="/auth/sign-in">Sign in now</Link>
+                        <Link to="/sign-in">Sign in now</Link>
                     </div>
                 </div>
             </form>

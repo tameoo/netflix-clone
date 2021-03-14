@@ -6,5 +6,5 @@ import './form.scss';
 export {
     StoryForm,
     SignInForm,
-    SignUpForm
+    SignUpForm,
 }

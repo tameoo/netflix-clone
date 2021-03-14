@@ -8,8 +8,8 @@ const MovieCategory = ({title, request}) => {
 
     useEffect(() => {
         
-        const fetchMovies = async () => {
-            await fetch(`${baseURL}${request}`)
+        const fetchMovies = () => {
+            fetch(`${baseURL}${request}`)
             .then(data => data.json())
             .then(movies => {
                 setMovies(createMovieList(movies.results));
@@ -21,11 +21,11 @@ const MovieCategory = ({title, request}) => {
 
     return (
         <div className="movie-category__row">
-        <h2 className="movie-category__title">{title}</h2>
-        <div className="movie-category__posters">
-            { movies }
+            <h2 className="movie-category__title">{title}</h2>
+            <div className="movie-category__posters">
+                { movies }
+            </div>
         </div>
-    </div>
     );
 }
 
