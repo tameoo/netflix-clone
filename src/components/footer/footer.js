@@ -15,9 +15,6 @@ const Footer = () => {
                             <Link to="/movies">Movies</Link>
                         </li>
                         <li className="footer__link">
-                            <Link to="/movie-list">Your List</Link>
-                        </li>
-                        <li className="footer__link">
                             <a href="https://help.netflix.com/legal/privacy">Privacy</a>
                         </li>
                         <li className="footer__link">

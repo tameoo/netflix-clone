@@ -7,8 +7,8 @@ const Showcase = () => {
     const [movie, setMovie] = useState([]);
 
     useEffect(() => {
-        const fetchMovies = async () => {
-            await fetch(`${baseURL}${requests.fetchNetflixOriginals}`)
+        const fetchMovies = () => {
+            fetch(`${baseURL}${requests.fetchNetflixOriginals}`)
             .then(data => data.json())
             .then(movie => {
                 setMovie(movie.results[
