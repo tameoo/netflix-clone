@@ -1,21 +1,21 @@
+const apiKey = 'AIzaSyC1cBFg7k7NnbedholwaIUrk0M40OQYzxw';
+
 const signUp = (newUser) => {
-    return fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyClIoDEhEv0j8UrjlJ5Z2Ka7MH1dIKus4I', 
+    return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, 
         {
             method: 'POST',
             body: JSON.stringify(newUser)
         }
-    )
-    .then(data => data.json());
+    ).then(data => data.json());
 }
 
 const signIn = (existUser) => {
-    return fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyClIoDEhEv0j8UrjlJ5Z2Ka7MH1dIKus4I', 
+    return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, 
         {
             method: 'POST',
             body: JSON.stringify(existUser)
         }
-    )
-    .then(data => data.json());
+    ).then(data => data.json());
 }
 
 export {
